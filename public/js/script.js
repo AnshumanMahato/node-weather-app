@@ -7,7 +7,7 @@ weatherForm.addEventListener('submit',(event) => {
     event.preventDefault();
     const address = query.value;
 
-    fetch('http://localhost:3000/weather?address=' + encodeURI(address)).then((res) => {
+    fetch('/weather?address=' + encodeURI(address)).then((res) => {
     res.json().then((data) => {
         if(data.error) {
             messageBox.innerHTML = '<strong>Error:</strong>' + data.error;
